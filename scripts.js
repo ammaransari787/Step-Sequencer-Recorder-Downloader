@@ -163,6 +163,7 @@ compressor.toMaster();
 gain.connect(dest);
 gain.toMaster();
 
+tom.connect(snaregain);
 snare.connect(snaregain);
 kick.connect(kickgain);
 hat.connect(snaregain);
