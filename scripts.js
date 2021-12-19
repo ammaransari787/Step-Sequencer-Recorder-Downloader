@@ -132,10 +132,10 @@ notecextrahigh.connect(dest);
 notecextrahigh.toMaster();
 
 
-const snaregain = new Tone.Gain(-.95);
+const snaregain = new Tone.Gain(-.999);
 snaregain.toMaster();
 snaregain.connect(dest);
-const kickgain = new Tone.Gain(-.1);
+const kickgain = new Tone.Gain(-.01);
 kickgain.toMaster();
 kickgain.connect(dest);
 const chordgain = new Tone.Gain(-.6);
