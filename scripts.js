@@ -46,11 +46,6 @@ sustain  : 0.02
 }
 )
 
-
-const reverb = new Tone.Freeverb({
-roomSize  : 0.7 ,
-dampening  : 8000
-});
 const feedbackDelay = new Tone.FeedbackDelay({
 delayTime  : "32n",
   feedback : 0.25
@@ -59,7 +54,7 @@ const gate = new Tone.Gate(-50)
 const compressor = new Tone.MidSideCompressor();
 const gain = new Tone.Gain();
 
-snare.chain(reverb, gate, compressor, gain);
+snare.chain( gate, compressor, gain);
 snare.chain( gate, compressor, gain);
 
 //tom.chain(reverb, gate, compressor, gain);
@@ -152,8 +147,6 @@ chordgainextra.connect(dest);
 const notegain = new Tone.Gain(-.5);
 notegain.toMaster();
 notegain.connect(dest);
-reverb.toMaster();
-reverb.connect(dest);
 feedbackDelay.toMaster();
 feedbackDelay.connect(dest);
 gate.connect(dest);
