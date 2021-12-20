@@ -1,3 +1,22 @@
-P {
-    font-size: xx-small;
+div > div {
+    text-align: center;
 }
+
+html {
+    background-color: grey;
+    color: whitesmoke;
+}
+
+input[type="checkbox"] {
+    width: 2rem;
+    height:  2rem;
+}
+
+#leftalign {
+    text-align: left;
+}
+
+p {
+    font-size: 2rem;
+}
+

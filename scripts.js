@@ -389,7 +389,7 @@ myButton6.onclick = function() {
         case "Dmin7":
             Dmin7(x);
             break;
-        case "Cmaj7":
+        case "CMaj7":
             CMaj7(x);
             break;
         case "G13":
@@ -412,6 +412,21 @@ myButton6.onclick = function() {
             break;
         case "Cm":
             Cm(x);
+            break;
+        case "A":
+            A(x);
+            break;
+        case "Am":
+            Am(x);
+            break;
+        case "A7":
+            A7(x);
+            break;
+        case "AMaj7":
+            AMaj7(x);
+            break;
+        case "Amin7":
+            Amin7(x);
             break;
     }
 }
@@ -468,9 +483,8 @@ function G(x) {
 
 function B(x) {
     document.getElementById(`bl${x}`).checked = true;
-    document.getElementById(`ebh${x}`).checked = true;
-    document.getElementById(`gbh${x}`).checked = true;
-    document.getElementById(`bh${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
 }
 
 function Cm(x) {
@@ -478,4 +492,37 @@ function Cm(x) {
     document.getElementById(`ebl${x}`).checked = true;
     document.getElementById(`gl${x}`).checked = true;
     document.getElementById(`ch${x}`).checked = true;
+}
+
+function A(x) {
+    document.getElementById(`el${x}`).checked = true;
+    document.getElementById(`dbl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+}
+
+function Am(x) {
+    document.getElementById(`el${x}`).checked = true;
+    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+}
+
+function A7(x) {
+    document.getElementById(`el${x}`).checked = true;
+    document.getElementById(`dbl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+    document.getElementById(`gl${x}`).checked = true;
+}
+
+function AMaj7(x) {
+    document.getElementById(`el${x}`).checked = true;
+    document.getElementById(`dbl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+    document.getElementById(`abh${x}`).checked = true;
+}
+
+function Amin7(x) {
+    document.getElementById(`el${x}`).checked = true;
+    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+    document.getElementById(`gl${x}`).checked = true;
 }
