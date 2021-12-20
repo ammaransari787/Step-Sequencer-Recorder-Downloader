@@ -428,6 +428,60 @@ myButton6.onclick = function() {
         case "Amin7":
             Amin7(x);
             break;
+        case "A13":
+            A13(x);
+            break;  
+        case "Ab":
+            Ab(x);
+            break; 
+        case "Abm":
+            Abm(x);
+            break;  
+        case "Ab7":
+            Ab7(x);
+            break; 
+        case "AbMaj7":
+            AbMaj7(x);
+            break;
+        case "Abmin7":
+            Abmin7(x);
+            break;
+        case "Ab13":
+            Ab13(x);
+            break;
+        case "Bm":
+            Bm(x);
+            break;
+        case "B7":
+            B7(x);
+            break;
+        case "BMaj7":
+            BMaj7(x);
+            break;
+        case "Bmin7":
+            Bmin7(x);
+            break;
+        case "B13":
+            B13(x);
+            break;
+        case "Bb":
+            Bb(x);
+            break;
+        case "Bbm":
+            Bbm(x);
+            break;
+        case "Bb7":
+            Bb7(x);
+            break;
+        case "BbMaj7":
+            BbMaj7(x);
+            break;
+        case "Bbmin7":
+            Bbmin7(x);
+            break;
+        case "Bb13":
+            Bb13(x);
+            break;
     }
 }
 
@@ -524,4 +578,129 @@ function Amin7(x) {
     document.getElementById(`ch${x}`).checked = true;
     document.getElementById(`al${x}`).checked = true;
     document.getElementById(`gl${x}`).checked = true;
+}
+
+function A13(x) {
+    document.getElementById(`el${x}`).checked = true;
+    document.getElementById(`dbl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+    document.getElementById(`gl${x}`).checked = true;
+    document.getElementById(`gbh${x}`).checked = true;
+}
+
+function Ab(x) {
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+}
+
+function Abm(x) {
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+}
+
+function Ab7(x) {
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+}
+
+function AbMaj7(x) {
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gh${x}`).checked = true;
+}
+
+function Abmin7(x) {
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbh${x}`).checked = true;
+}
+
+function Ab13(x) {
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+    document.getElementById(`fh${x}`).checked = true;
+}
+
+function Bm(x) {
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+}
+
+function B7(x) {
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+}
+
+function BMaj7(x) {
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+    document.getElementById(`bbh${x}`).checked = true;
+}
+
+function Bmin7(x) {
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+    document.getElementById(`ah${x}`).checked = true;
+}
+
+function B13(x) {
+    document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`ebl${x}`).checked = true;
+    document.getElementById(`gbl${x}`).checked = true;
+    document.getElementById(`al${x}`).checked = true;
+    document.getElementById(`abh${x}`).checked = true;
+}
+
+function Bb(x) {
+    document.getElementById(`bbl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
+    document.getElementById(`fl${x}`).checked = true;
+}
+
+function Bbm(x) {
+    document.getElementById(`bbl${x}`).checked = true;
+    document.getElementById(`dbl${x}`).checked = true;
+    document.getElementById(`fl${x}`).checked = true;
+}
+
+function Bb7(x) {
+    document.getElementById(`bbl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
+    document.getElementById(`fl${x}`).checked = true;
+    document.getElementById(`abl${x}`).checked = true;
+}
+
+function BbMaj7(x) {
+    document.getElementById(`bbl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
+    document.getElementById(`fl${x}`).checked = true;
+    document.getElementById(`ah${x}`).checked = true;
+}
+
+function Bbmin7(x) {
+    document.getElementById(`bbl${x}`).checked = true;
+    document.getElementById(`dbl${x}`).checked = true;
+    document.getElementById(`fl${x}`).checked = true;
+    document.getElementById(`abh${x}`).checked = true;
+}
+
+function Bb13(x) {
+    document.getElementById(`bbl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
+    document.getElementById(`fl${x}`).checked = true;
+    document.getElementById(`abl${x}`).checked = true;
+    document.getElementById(`gh${x}`).checked = true;
 }
