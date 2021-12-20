@@ -477,8 +477,8 @@ function Cmin7(x) {
 function G(x) {
     document.getElementById(`gl${x}`).checked = true;
     document.getElementById(`bl${x}`).checked = true;
+    document.getElementById(`dl${x}`).checked = true;
     document.getElementById(`dh${x}`).checked = true;
-    document.getElementById(`gh${x}`).checked = true;
 }
 
 function B(x) {
@@ -522,7 +522,7 @@ function AMaj7(x) {
 
 function Amin7(x) {
     document.getElementById(`el${x}`).checked = true;
-    document.getElementById(`cl${x}`).checked = true;
+    document.getElementById(`ch${x}`).checked = true;
     document.getElementById(`al${x}`).checked = true;
     document.getElementById(`gl${x}`).checked = true;
 }
