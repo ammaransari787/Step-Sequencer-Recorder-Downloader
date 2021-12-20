@@ -478,7 +478,6 @@ function G(x) {
     document.getElementById(`gl${x}`).checked = true;
     document.getElementById(`bl${x}`).checked = true;
     document.getElementById(`dl${x}`).checked = true;
-    document.getElementById(`dh${x}`).checked = true;
 }
 
 function B(x) {
