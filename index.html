@@ -8,13 +8,18 @@
     <link href="styles/styles.css" rel="stylesheet">
 </head>
 <body>
+    <center>
     <button class="button">START SOUND</button>
     <button class="button1">STOP SOUND</button>
     <button class="button2">INCREASE BPM</button> 
     <button class="button3">DECREASE BPM</button>
     <button class="button4">START RECORDING</button>
     <button class="button5">STOP RECORDING</button>
-    <audio controls></audio>
+    <div>
+        <br>
+        <audio controls></audio>
+    </div>
+    <br>
     <label for="chords">CHOOSE A CHORD</label>
     <select name="chords" id="chords">
         <option value="Ab">Ab</option>
@@ -52,7 +57,7 @@
     </select>
     <input type="text" placeholder="Enter step to insert chord" id="stepnumber">
     <button class="button6">GET CHORD</button>
-
+    </center>
     <div class="instruments">
         <p>Drums: Kick | Snare | Hi-Hat</p><div class="kick">
             <input type="checkbox">
