@@ -1,3 +1,4 @@
+// Initialize required audio context, instruments/synths, effects
 const audio = document.querySelector('audio');
 const kick = new Tone.MembraneSynth();
 const hat = new Tone.MetalSynth();
@@ -32,163 +33,118 @@ const dest = actx.createMediaStreamDestination();
 const recorder = new MediaRecorder(dest.stream);
 const startButton = document.querySelector('.button');
 const tom = new Tone.MembraneSynth();
-const snare = new Tone.NoiseSynth(
-  {
-    
-noise  : {
-type  : "brown"
-}  ,
-envelope  : {
-attack  : 0.005 ,
-decay  : 0.1 ,
-sustain  : 0.02
-}
-}
-)
-
-const feedbackDelay = new Tone.FeedbackDelay({
-delayTime  : "32n",
-  feedback : 0.25
+const snare = new Tone.NoiseSynth({
+    noise: {
+        type: "brown"
+    },
+    envelope: {
+        attack: 0.005,
+        decay: 0.1,
+        sustain: 0.02
+    }
 });
+const feedbackDelay = new Tone.FeedbackDelay({
+    delayTime: "32n",
+    feedback: 0.25
+});
+
 const gate = new Tone.Gate(-50)
 const compressor = new Tone.MidSideCompressor();
 const gain = new Tone.Gain();
 
-snare.chain( gate, compressor, gain);
-snare.chain( gate, compressor, gain);
+snare.chain(gate, compressor, gain);
+snare.chain(gate, compressor, gain);
 
-//tom.chain(reverb, gate, compressor, gain);
-tom.chain( gate, compressor, gain);
-
-
+tom.chain(gate, compressor, gain);
 gain.chain(Tone.Master); 
 
+// Set gain levels for instruments 
+const snaregain = new Tone.Gain(-.999);
+const kickgain = new Tone.Gain(-.01);
+const chordgain = new Tone.Gain(-.6);
+const chordgainextra = new Tone.Gain(-.98);
+const notegain = new Tone.Gain(-.5);
+
+// Required to start transport 
 startButton.addEventListener("click", startTransport);
 
 document.querySelector('.button')?.addEventListener('click', async () => {
-	await Tone.start()
-	console.log('audio is ready')
-})
+	await Tone.start();
+	console.log('audio is ready');
+});
 
-kick.connect(dest);
-kick.toMaster();
-snare.connect(dest);
-snare.toMaster();
-tom.connect(dest);
-tom.toMaster();
-hat.connect(dest);
-hat.toMaster();
-noteclow.connect(dest);
-noteclow.toMaster();
-notedblow.connect(dest);
-notedblow.toMaster();
-notedlow.connect(dest);
-notedlow.toMaster();
-noteeblow.connect(dest);
-noteeblow.toMaster();
-noteelow.connect(dest);
-noteelow.toMaster();
-noteflow.connect(dest);
-noteflow.toMaster();
-notegblow.connect(dest);
-notegblow.toMaster();
-noteglow.connect(dest);
-noteglow.toMaster();
-noteablow.connect(dest);
-noteablow.toMaster();
-notealow.connect(dest);
-notealow.toMaster();
-notebblow.connect(dest);
-notebblow.toMaster();
-noteblow.connect(dest);
-noteblow.toMaster();
-notechigh.connect(dest);
-notechigh.toMaster();
+const instrument_list = [
+    kick,
+    snare,
+    tom,
+    hat,
+    noteclow,
+    notedblow,
+    notedlow,
+    noteeblow,
+    noteelow,
+    noteflow,
+    notegblow,
+    noteglow,
+    noteablow,
+    notealow,
+    notebblow,
+    noteblow,
+    notechigh,
+    notedbhigh,
+    notedhigh,
+    noteebhigh,
+    noteehigh,
+    notefhigh,
+    notegbhigh,
+    noteghigh,
+    noteabhigh,
+    noteahigh,
+    notebbhigh,
+    notebhigh
+];
+
+const effect_list = [
+    snaregain,
+    kickgain,
+    chordgain,
+    chordgainextra,
+    notegain,
+    feedbackDelay,
+    gate,
+    compressor,
+    gain
+];
+
+for ( let i = 0; i < effect_list.length; i++ ) {
+    effect_list[i].connect(dest);
+    effect_list[i].toMaster();
+}
+
+for ( let i = 0; i < instrument_list.length; i++ ) {
+    instrument_list[i].connect(dest);
+    instrument_list[i].toMaster();
+    if (instrument_list[i] === tom || instrument_list[i] === snare) {
+        instrument_list[i].connect(snaregain);
+    } else if (instrument_list[i] === kick) {
+        instrument_list[i].connect(kickgain);
+    } else if (instrument_list[i] === hat) {
+        instrument_list[i].connect(chordgainextra);
+    } else {
+        instrument_list[i].connect(notegain);
+    }
+}
+
+// Only for this version bc it has more C rows
 notechigh2.connect(dest);
 notechigh2.toMaster();
-notedbhigh.connect(dest);
-notedbhigh.toMaster();
-notedhigh.connect(dest);
-notedhigh.toMaster();
-noteebhigh.connect(dest);
-noteebhigh.toMaster();
-noteehigh.connect(dest);
-noteehigh.toMaster();
-notefhigh.connect(dest);
-notefhigh.toMaster();
-notegbhigh.connect(dest);
-notegbhigh.toMaster();
-noteghigh.connect(dest);
-noteghigh.toMaster();
-noteabhigh.connect(dest);
-noteabhigh.toMaster();
-noteahigh.connect(dest);
-noteahigh.toMaster();
-notebbhigh.connect(dest);
-notebbhigh.toMaster();
-notebhigh.connect(dest);
-notebhigh.toMaster();
 notecextrahigh.connect(dest);
 notecextrahigh.toMaster();
-
-
-const snaregain = new Tone.Gain(-.999);
-snaregain.toMaster();
-snaregain.connect(dest);
-const kickgain = new Tone.Gain(-.01);
-kickgain.toMaster();
-kickgain.connect(dest);
-const chordgain = new Tone.Gain(-.6);
-chordgain.toMaster();
-chordgain.connect(dest);
-const chordgainextra = new Tone.Gain(-.98);
-chordgainextra.toMaster();
-chordgainextra.connect(dest);
-const notegain = new Tone.Gain(-.5);
-notegain.toMaster();
-notegain.connect(dest);
-feedbackDelay.toMaster();
-feedbackDelay.connect(dest);
-gate.connect(dest);
-gate.toMaster();
-compressor.connect(dest);
-compressor.toMaster();
-gain.connect(dest);
-gain.toMaster();
-
-tom.connect(snaregain);
-snare.connect(snaregain);
-kick.connect(kickgain);
-hat.connect(chordgainextra);
-noteclow.connect(notegain);
-notedblow.connect(notegain);
-notedlow.connect(notegain);
-noteeblow.connect(notegain);
-noteelow.connect(notegain);
-noteflow.connect(notegain);
-notegblow.connect(notegain);
-noteglow.connect(notegain);
-noteablow.connect(notegain);
-notealow.connect(notegain);
-notebblow.connect(notegain);
-noteblow.connect(notegain);
-notechigh.connect(notegain);
 notechigh2.connect(notegain);
-notedbhigh.connect(notegain);
-notedhigh.connect(notegain);
-noteebhigh.connect(notegain);
-noteehigh.connect(notegain);
-notefhigh.connect(notegain);
-notegbhigh.connect(notegain);
-noteghigh.connect(notegain);
-noteabhigh.connect(notegain);
-noteahigh.connect(notegain);
-notebbhigh.connect(notegain);
-notebhigh.connect(notegain);
 notecextrahigh.connect(notegain);
 
-let myButton4 = document.querySelector('.button4')
-let myButton5 = document.querySelector('.button5')
+let start_record_button = document.querySelector('.start_record')
+let stop_record_button = document.querySelector('.stop_record')
 
 const chunks = [];
 
@@ -325,43 +281,42 @@ recorder.ondataavailable = evt => chunks.push(evt.data);
 recorder.onstop = evt => {
     let blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
     audio.src = URL.createObjectURL(blob);
-};
+}
 
-myButton4.onclick = function() {
+start_record_button.onclick = function() {
     recordingStart();
 }
 
-myButton5.onclick = function() {
+stop_record_button.onclick = function() {
     recordingStop();
 }
 
 function startTransport() {
     sequencer();
     Tone.Transport.start();
-};
+}
 
 function recordingStart() {
     recorder.start();
     sequencer();
     Tone.Transport.start();
-
 }
 
 function recordingStop(){
     Tone.Transport.cancel();
-    recorder.stop()
-}
+    recorder.stop();
+};
 
-let myButton2 = document.querySelector('.button2');
-let myButton3 = document.querySelector('.button3');
-let myButton1 = document.querySelector('.button1');
-let myButton6 = document.querySelector('.button6');
+let increase_bpm_button = document.querySelector('.increase_bpm');
+let decrease_bpm_button = document.querySelector('.decrease_bpm');
+let stop_playing_button = document.querySelector('.stop_playing');
+let get_chord_button = document.querySelector('.get_chord');
 
 function playStop() {
     Tone.Transport.cancel();
 }
 
-myButton1.onclick = function() {
+stop_playing_button.onclick = function() {
     playStop();
 }
 
@@ -369,7 +324,7 @@ function increaseBpm() {
     Tone.Transport.bpm.value = (Tone.Transport.bpm.value * 1.2);
 }
 
-myButton2.onclick = function() {
+increase_bpm_button.onclick = function() {
     increaseBpm();
 }
 
@@ -377,11 +332,11 @@ function decreaseBpm(){
     Tone.Transport.bpm.value = (Tone.Transport.bpm.value * .8);
 }
 
-myButton3.onclick = function(){
+decrease_bpm_button.onclick = function(){
     decreaseBpm();
 }
 
-myButton6.onclick = function() {
+get_chord_button.onclick = function() {
     //let x = prompt("Enter a single number between 1 and 32 that represents the step of the sequencer to fill with this chord.");
     // So prompt was the reason it interrupted transport! Using a text input instead fixed that. 
     let x_input = document.getElementById('stepnumber');
