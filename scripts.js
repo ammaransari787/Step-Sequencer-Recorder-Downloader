@@ -382,7 +382,11 @@ myButton3.onclick = function(){
 }
 
 myButton6.onclick = function() {
-    let x = prompt("Enter a single number between 1 and 32 that represents the step of the sequencer to fill with this chord.");
+    //let x = prompt("Enter a single number between 1 and 32 that represents the step of the sequencer to fill with this chord.");
+    // So prompt was the reason it interrupted transport! Using a text input instead fixed that. 
+    let x_input = document.getElementById('stepnumber');
+    let x = x_input.value;
+    // TODO: add some checks to ensure x is a valid number here !! 
     let chordsdd = document.getElementById("chords");
     let selectedValue = chordsdd.options[chordsdd.selectedIndex].value;
     switch(selectedValue) {
