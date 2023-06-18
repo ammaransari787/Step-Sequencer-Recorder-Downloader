@@ -3,6 +3,6 @@ Step sequencer with drums and synths for every note on two octaves. Has buttons 
 
 Link to live site: https://ammaransari787.github.io/Step-Sequencer-Recorder-Downloader/index.html
 
-To record: press Start recording, then press stop recording when you wish to end the recording.
+To record: First use STOP SOUND to stop any sounds that may be playing. Then, press the START RECORDING button, and press STOP RECORDING when you wish to end the recording.
 
-To download: Click the triangle play button to hear the recorded track - after playing for a period of time, three vertical dots will appear in the media player, which when clicked will allow one to download the track. 
+To download: After recording using instructions above, click the triangle play button in the media to hear the recorded track - after playing for a period of time, three vertical dots will appear in the media player, which when clicked will allow one to download the track. 
