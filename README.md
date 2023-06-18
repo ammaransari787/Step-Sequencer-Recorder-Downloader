@@ -5,4 +5,4 @@ Link to live site: https://ammaransari787.github.io/Step-Sequencer-Recorder-Down
 
 To record: First use STOP SOUND to stop any sounds that may be playing. Then, press the START RECORDING button, and press STOP RECORDING when you wish to end the recording.
 
-To download: After recording using instructions above, click the triangle play button in the media to hear the recorded track - after playing for a period of time, three vertical dots will appear in the media player, which when clicked will allow one to download the track. 
+To download: After recording using instructions above, click the triangle play button in the media to hear the recorded track. After playing for a period of time, three vertical dots will appear in the media player, which can be clicked to present user the option to download the sound. 
