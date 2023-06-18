@@ -9,7 +9,7 @@ First use STOP SOUND to stop any sounds that may be playing. Then, press the STA
 
 To download: 
 
-Chrome: After recording using instructions above, click the triangle play button in the media to hear the recorded track. After playing for a period of time, three vertical dots will appear in the media player, which can be clicked to present user the option to download the sound. 
+Chrome: After recording using instructions above, click the play button in the media player to hear the recorded track. After playing for a period of time, three vertical dots will appear in the media player, which can be clicked to present user the option to download the sound. 
 
 Firefox: After recording using instructions above, right click media player and save audio. 
 
