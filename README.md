@@ -1,7 +1,5 @@
 # Step-Sequencer-Recorder-Downloader
-Step sequencer with drums and synths for every note on two octaves. Has buttons that place chords on desired step of sequencer, and recording or downloading capabilities.
-
-Link to live site: https://ammaransari787.github.io/Step-Sequencer-Recorder-Downloader/index.html
+Link to web app: https://ammaransari787.github.io/Step-Sequencer-Recorder-Downloader/index.html
 
 To record: 
 
