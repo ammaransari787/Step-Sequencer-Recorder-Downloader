@@ -1,5 +1,5 @@
 # Step-Sequencer-Recorder-Downloader
-Link to web app: https://ammaransari787.github.io/Step-Sequencer-Recorder-Downloader/index.html
+Link to app: https://ammaransari787.github.io/Step-Sequencer-Recorder-Downloader/index.html
 
 To record: 
 
