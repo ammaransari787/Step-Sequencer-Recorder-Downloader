@@ -13,4 +13,4 @@ Chrome: After recording using instructions above, click the triangle play button
 
 Firefox: After recording using instructions above, right click media player and save audio. 
 
-Downloading is not supported by Safari web browser due to incompatibility with certain portions of the Web Audio API. 
+Safari: Downloading not supported on Safari at this time. 
